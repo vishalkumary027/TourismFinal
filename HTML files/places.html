@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./../JAVASCRIPT files/run.js"></script>
+    
+    <link rel="stylesheet" href="./../CSS files/home.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .profile{
+            display: flex;
+            justify-content: end;
+            /* padding: 10px; */
+        }
+        .btn{
+            padding: 4px;
+            
+            
+            
+        }
+        a{
+            text-decoration: none;
+           
+        }
+
+        .header-content{
+            display: flex;
+            top: 1px;
+   justify-content: space-around;
+   align-items: center;
+   height: 7vh;
+   border-bottom: 1px solid gray;
+        }
+        .btn{
+            padding: 1vh 2vh;
+            border-radius: 5vh;
+            border: 2px solid black;
+            margin-right: 4px;
+        }
+
+
+/* place */
+
+        .cardContainer{
+            width: 80%;
+            height: 100%;
+            border: 2px solid red;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card{
+            width: 30%;
+            height: 100%;
+            /* border: 1px solid ; */
+            border-radius: 15px;
+            overflow: hidden;
+        
+            
+            
+        }
+
+        .cardImage{
+            width: 100%;
+            height: 80%;
+            border: 1px solid;
+            border-radius: 15px;
+            overflow: hidden;
+
+        }
+        #img{
+
+            height: 100%;
+            width: 100%;
+            /* background-size: contain; */
+        }
+        #left , #right{
+            padding: 10px;
+            font-size: 1.5rem;
+            background-color: black;
+            color: white;
+        }
+        .cardbox{
+            display: flex;
+            width: 70vw;
+             height: 50vh;
+        }
+
+
+
+        /* css */
+
+        .img1{
+            height: 240px;
+            width: 430px;
+            margin-top: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+            box-shadow: 5px 20px 17px;
+
+        }
+        /* p{
+            border: 1px solid black;
+            text-align: center;
+            width: 98%;
+        } */
+
+        #cross{
+            /* left: 90%;
+            float: left;
+            
+            font-size: 3rem; */
+            font-size: 3rem; 
+            margin-right: 100px;
+
+        }
+        .special{
+            width: 100vw; 
+        }
+        .paraDetails{
+            width: 70vw;
+            padding: 3vh; 
+            margin: 0 auto;
+
+        }
+        .imagecontainer{
+            display: flex;
+            justify-content: space-between;
+            width: 100vw;
+            padding: 3vh 2vh;
+            margin-bottom: 3vh;
+
+        }
+        .cardTitle{
+        align-items: center;
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 1.5vh;
+    }
+    .cardBtn{
+        align-items: center;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 20px;
+        bottom: 30px;
+        font-size: 1.5em;
+        margin-bottom: 3vh;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="header-content" >
+        <h1 class="tou">Exploration</h1>
+        <div class="navflex">
+
+       
+
+      
+       <nav id="nav-box">
+           <ul class="nav">
+               <li><a href="/index.html">Home</a></li>
+               <li><a href="./about.html">About Us</a></li>
+               <li><a href="./places.html">Place</a></li>
+               <li><a href="./contact.html">Contact Us</a></li>
+           </ul>
+       </nav>
+       <div class="profile">
+
+       </div>
+       <div class="auth">
+        
+        <button><a  href="./HTML files/signup.html" class="btn">signup</a></</button>
+        <button><a  href="./HTML files/login.html" class="btn">login</a></button>
+    </div>
+
+
+</div>
+
+   
+      </div>
+
+
+<div class="title">
+    <h1 class="">Place to explore</h1>
+</div>
+    <!-- <img src="./../IMAGE files/" alt=""> -->
+
+    <div class="cardbox">
+
+        <button id="left">&larr;</button>
+        <div class="cardContainer">
+            <!-- <a href="./contact.html"></a> -->
+        </div>
+        <button id="right">&rarr;</button>
+    </div>
+
+    <div class="details">
+        abc
+    </div>
+
+    
+
+
+  
+    <script>
+         
+        const box=document.getElementsByClassName("cardContainer")[0];
+        const left = document.getElementById("left")
+        const right = document.getElementById("right")
+        const details = document.getElementsByClassName("details")
+        const cardbox = document.getElementsByClassName("cardbox")[0]
+        details[0].style.display="none"
+        let h=document.getElementsByClassName("header-content")[0]
+        h.style.marginTop="0px"
+        
+      
+
+
+        let arr=[
+        {
+            img :'./../IMAGEfiles/kerala/kel1.jpg',
+            title :'Kerala',
+            // template
+
+            template:` <div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Kerala</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/kerala/kel2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/kerala/kel3.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/kerala/kel4.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>Kerala , called Keralam in Malayalam , is a state on the Malabar Coast of India.[15] It was formed on 1 November 1956, following the passage of the States Reorganisation Act, by combining Malayalam-speaking regions of the erstwhile regions of Cochin, Malabar, South Canara, and Travancore.[16][17] Spread over 38,863 km2 (15,005 sq mi), Kerala is the 21st largest Indian state by area. It is bordered by Karnataka to the north and northeast, Tamil Nadu to the east and south, and the Lakshadweep Sea[18] to the west. With 33 million inhabitants as per the 2011 census, Kerala is the 13th-largest Indian state by population. It is divided into 14 districts with the capital being Thiruvananthapuram. Malayalam is the most widely spoken language and is also the official language of the state.[19]
+
+            The Chera dynasty was the first prominent kingdom based in Kerala. The Ay kingdom in the deep south and the Ezhimala kingdom in the north formed the other kingdoms in the early years of the Common Era (CE). The region had been a prominent spice exporter since 3000 BCE.[20] The region's prominence in trade was noted in the works of Pliny as well as the Periplus around 100 CE. In the 15th century, the spice trade attracted Portuguese traders to Kerala, and paved the way for European colonisation of India. At the time of Indian independence movement in the early 20th century, there were two major princely states in Kerala: Travancore and Cochin. They united to form the state of Thiru-Kochi in 1949. The Malabar region, in the northern part of Kerala, had been a part of the Madras province of British India, which later became a part of the Madras State post-independence. After the States Reorganisation Act, 1956, the modern-day state of Kerala was formed by merging the Malabar district of Madras State (excluding Gudalur taluk of Nilgiris district, Lakshadweep Islands, Topslip, the Attappadi Forest east of Anakatti), the taluk of Kasaragod (now Kasaragod District) in South Canara, and the erstwhile state of Thiru-Kochi (excluding four southern taluks of Kanyakumari district, and Shenkottai taluks).[17]
+            
+            Kerala has the lowest positive population growth rate in India, 3.44%; the highest Human Development Index (HDI), 0.784 in 2018 (0.712 in 2015); the highest literacy rate, 96.2% in the 2018 literacy survey conducted by the National Statistical Office, India;[10] the highest life expectancy, 77.3 years; and the highest sex ratio, 1,084 women per 1,000 men. Kerala is the least impoverished state in India according to NITI Aayog's Sustainable Development Goals dashboard and Reserve Bank of India's 'Handbook of Statistics on Indian Economy'.[21][22] Kerala is the second-most urbanised major state in the country with 47.7% urban population according to the 2011 Census of India.[23] The state topped in the country to achieve the Sustainable Development Goals according to the annual report of NITI Aayog published in 2019.[24] The state has the highest media exposure in India with newspapers publishing in nine languages, mainly Malayalam and sometimes English. Hinduism is practised by more than half of the population, followed by Islam and Christianity.
+            
+            The economy of Kerala is the 8th-largest in India with ₹8.55 trillion (US$110 billion) in gross state domestic product (GSDP) and a per capita net state domestic product of ₹222,000 (US$2,800).[25] The tertiary sector contributes around 65% to state's GSVA, while the primary sector contributes only 8%.[26] The state has witnessed significant emigration, especially to the Arab states of the Persian Gulf during the Gulf Boom of the 1970s and early 1980s, and its economy depends significantly on remittances from a large Malayali expatriate community. The production of pepper and natural rubber contributes significantly to the total national output. In the agricultural sector, coconut, tea, coffee, cashew and spices are important. The state is situated between Arabian Sea to the west and Western Ghats mountain ranges to the east. The state's coastline extends for 595 kilometres (370 mi), and around 1.1 million people in the state are dependent on the fishery industry, which contributes 3% to the state's income. Named as one of the ten paradises of the world by National Geographic Traveler,[27] Kerala is one of the prominent tourist destinations of India, with coconut-lined sandy beaches, backwaters, hill stations, Ayurvedic tourism and tropical greenery as its major attractions.</p></div></div>
+    
+    `
+        }  ,
+        {
+            img :'./../IMAGEfiles/kedarnath/ked4.jpg',
+            title:'Kedarnath Temple',
+            template:`<div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Kedarnath Temple</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/kedarnath/ked1.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/kedarnath/ked2.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/kedarnath/ked3.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>Kedarnath Temple (Sanskrit: केदारनाथ मंदिर, IAST: Kēdāranātha Mandira, lit. 'temple of the God of the field') is a Hindu temple, one of the twelve jyotirlinga of Shiva. The temple is located on the Garhwal Himalayan range[1] near the Mandakini river, in the state of Uttarakhand, India. Due to extreme weather conditions, the temple is open to the general public only between the months of April (Akshaya Tritiya) and November (Kartik Purnima, the autumn full moon). During the winters, the vigraha (deity) of the temple is carried down to Ukhimath to be worshipped for the next six months. Kedarnath is seen as a homogeneous form of Shiva, the 'Lord of Kedarkhand', the historical name of the region.[2]<br><br>
+
+            The temple is not directly accessible by road and has to be reached by a 22 kilometres (14 mi) uphill trek from Gaurikund. The Pandavas were supposed to have pleased Shiva by doing penance in Kedarnath.[1][3] The temple is one of the four major sites in India's Chota Char Dham pilgrimage of Northern Himalayas and is the first of the Panch Kedar pilgrimage sites. This temple is the highest among the 12 Jyotirlingas.[4] <br><br>It is one of the 275 paadal petra sthalams expounded in the Tevaram, a sacred Tamil Shaivite text written during the 6th and 7th centuries by 63 saints called Nayanars. This temple is sung of by Thirugnanasambandar, Appar, Sundarar and Sekkizhar in their Tevaram texts.[5]
+            <br><br>
+            Kedarnath was the worst affected area during the 2013 flash floods in North India. The temple complex, surrounding areas, and Kedarnath town suffered extensive damage, but the temple structure did not suffer any major damage, apart from a few cracks on one side of the four walls which was caused by the flowing debris from the higher mountains. A large rock among the debris acted as a barrier, protecting the temple from the flood. The surrounding premises and other buildings in the market area were heavily damaged.<br><br>
+History and legends of origin<br>
+
+The Pandavas visit Kedarnath after the Mahabharata War
+At a height of 3,583 m (11,755 ft), 223 km (139 mi) from Rishikesh, on the shores of Mandakini river, a tributary of Ganga, is a stone edifice of unknown date.[7] It is not certain who built the original Kedarnath temple and when. The name "Kedarnath" means "the lord of the field": it derives from the Sanskrit words kedara ("field") and natha ("lord"). The text Kashi Kedara Mahatmya states that it is so called because "the crop of liberation" grows here.[8]<br><br>
+
+A folk legend about Kedarnath relates to the Pandavas, the heroes of the Hindu epic Mahabharata. The Pandavas wanted to atone for the sins committed during the Kurukshetra war. Thus, they handed over the reins of their kingdom to their kin and left in search of the lord Shiva and to seek his blessings. But, Shiva wanted to avoid them and assumed the form of a bull (Nandi). Bhima, the second of the five Pandava brothers, then saw the bull grazing near Guptakashi ("hidden Kashi" — the name derived from the hiding act of Shiva). Bhima immediately recognized the bull to be Shiva. Bhima caught hold of the bull by its tail and hind legs. But the bull-formed Shiva disappeared into the ground to later reappear in parts, with the hump raising in Kedarnath, the arms appearing in Tungnath, the face showing up at Rudranath, the nabhi (navel) and stomach surfacing in Madhyamaheshwar and the hair appearing in Kalpeshwar.</p></div></div>
+    
+    `
+            
+        }    ,
+        {
+            img :'./../IMAGEfiles/jejuri/jej1.jpg',
+            title:'Khandoba Temple',
+
+            template:`<div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Khandoba Temple</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/jejuri/jej2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/jejuri/jej3.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/jejuri/jej4.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>The Khandoba Temple of Jejuri is a Hindu temple dedicated to the god Khandoba, located on a hill in the town of Jejuri, Maharashtra, India.[4][5] It is one of the most prominent Hindu pilgrimage centres of Maharashtra.<br>
+
+            Jejuri's Khandoba is a Kuladaivata of many farming families, Brahmins and nomadic Dhangar tribe of the Maharashtra and Deccan region.[6]
+            
+            According to legends and folklore, Khandoba was a human Avatar of Bhagawan Shiva; he used to live and rule the region from Jejuri-gad (transl. Jejuri fort), where the Mandir is now present. The Mandir is also known as Jejuri-gad. Khandoba killed the demon brothers Mani and Malla, when they harassed people.[7][5] <br>
+            
+            History <br>
+            The worship of Khandoba began in the 12th to 13th century. It was built by Yadavas in 12th century. The Khandoba temple was rebuilt during the reign of the Peshwas.[8] <br>
+            
+            In 1737–1739, Chimaji Appa, brother of Peshwa Baji Rao I, gifted Portuguese church bells from Vasai to the temple. He and his Maratha soldiers took the bells from Portuguese churches as conquest memorabilia, after defeating them in the Battle of Vasai (1737).[9]
+            <br>
+            Deity <br>
+            Main article: Khandoba <br>
+            The central deity Khandoba, also known as Khanderav, Khanderay, Malhari-Martand and Malhar, is one of the most popular deities of Maharashtra.[10][11][12] Khandoba is regarded as an avatar of the God Shiva.[6] <br>
+            
+            Khandoba is the Kuladevata (ancestral tutelary deity) of many people of Maharashtra.[13] The Kunbi-Marathas casts', Dhangar tribe, herdsmen, nomadic folks of Maharashtra worship Jejuri's Khandoba.[14] <br>
+            
+            Legends <br>
+            According to legend, two rakshasa brothers, Mani and Malla, pleased the god Brahma with their austerities. By Brahma's boon, they became very powerful and started destruction on Earth, harassing people. In a fierce battle, Khandoba killed one demon, and forgave the other when he promised to serve the common people.[3][11] <br>
+            
+            
+            Jejuri village in foreground and Khandoba mandir on the hill in background at Jejuri, somewhere between 1855 and 1862 <br>
+            Architecture <br>
+            The temple is on a hill at an elevation of 718 m (2,356 ft).[citation needed] The temple can be approached by three flights of steps from the east, the west, and the north. The northern steps lead to the main entrance of the temple.[15] The temple is accessed by climbing nearly 200 steps.[citation needed] The steps have around 18 arches, 350 Deep-stambha (lamp-pillars) and several shrines bordering them.[15] Around a third of the way up, the steps split and rejoin 50 feet (15 m) higher. On one pathway going up, the pilgrims visit the shrine of Khandoba's minister, Hegadi Pradhan. <br>
+            
+            This temple looks like a hill fort, and is known as Jejuri gad (transl. Jejuri fort).[6] The eight-sided, 350 yards (320 m) long fort boundary encloses a cloister courtyard, with the main temple shrine at the center.[15]
+            
+            In the courtyard is a brass-coated tortoise, 20 feet (6.1 m) in diameter.[15]
+            <br>
+            The temple is built in Hemadpanthi architecture style,[citation needed] consisting of an outer square hall and an inner sanctum. The sanctum includes a linga (symbol of Shiva) and three pairs of images of Khandoba with his first wife Mhalsa.</p></div></div>
+    `
+        }    , 
+        {
+            img :'./../IMAGEfiles/rajgad/raj1.jpg',
+            title:'Rajgad Ford',
+            template:`<div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Rajgad Fort</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/rajgad/raj2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/rajgad/raj3.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/rajgad/raj4.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>Raigad, situated in the Raigad district of Maharashtra, India, is a hill fort located in the town of Mahad. It is one of the strongest fortresses on the Deccan Plateau and was historically referred to as Rairee or Rairy fort.[1] 
+
+            Chhatarpati Shivaji Maharaj, the Maratha ruler, along with the his chief engineer Sardar Hiroji Indalkar, oversaw the construction and development of various buildings and structures within Raigad. In 1674, after being crowned the emperor of the Maratha kingdom, Chhatrapati Shivaji Maharaj chose Raigad as his capital. Under his reign, the Maratha Empire expanded to encompass a significant portion of western and central India.
+            
+            The Samadhi of Rajmata Jijabai ".
+            The main palace was constructed using wood, of which only the base pillars remain. The main fort ruins consist of the queen's quarters, and six chambers, with each chamber having its private restroom. The chambers do not have any windows. 
+            
+            The king's court, inside the Raigad Fort, has a replica of the original throne that faces the main doorway called the Nagarkhana Darwaja. It faces the East Side. It was here where Chhatrapati Shivaji Maharaj's Rajyabhishek took place.  A secondary entrance, called the Mena Darwaja on the south side, was supposedly the private entrance for the royal ladies of the fort that lead to the queen's quarters. The convoy of the king and the king himself used the Palkhi Darwaja. on the north side. To the right of Palkhi Darwaja, is a row of three dark and deep chambers. Historians believe that these were the granaries for the fort.[4]
+            
+            From the fort, one can view the execution point called Takmak Tok, a cliff from which sentenced prisoners were thrown to their death. This area has been fenced off.[5]
+            </p></div></div>`
+        }  ,  
+        {
+            img :'./../IMAGEfiles/kutch/kut1.jpg',
+            title:'Kutch',
+            template:`<div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Kutch</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/kutch/kut2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/kutch/kut3.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/kutch/kut4.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>Kutch district, officially spelled Kachchh, is a district of Gujarat state in western India, with its headquarters (capital) at Bhuj. Covering an area of 45,674 km2,[1] it is the largest district of India. The area of Kutch is larger than the entire area of other Indian states like Haryana (44,212 km2) and Kerala (38,863 km2).[2] The population of Kutch is about 2,092,371.[3] It has 10 talukas, 939 villages and 6 municipalities.[3] The Kutch district is home to the Kutchi people who speak the Kutchi language.
+
+            Kutch literally means something which intermittently becomes wet and dry; a large part of this district is known as Rann of Kutch which is shallow wetland which submerges in water during the rainy season and becomes dry during other seasons. The same word is also used in Sanskrit origin for a tortoise. The Rann is known for its marshy salt flats which become snow white after the shallow water dries up each season before the monsoon rains.
+            
+            Kutch is surrounded by the Gulf of Kutch and the Arabian Sea to the south and west, while the northern and eastern parts are surrounded by the Great and Little Rann (seasonal wetlands) of Kutch. When there were not many dams built on its rivers, the Rann of Kutch remained wetlands for a large part of the year. Even today, the region remains wet for a significant part of year. The district had a population of 2,092,371 as of 2011 census, of which 30% were urban.[4] Motor vehicles registered in Kutch district have a registration number starting with GJ-12.  Being a border district, Kutch has both an army and an air force base. On 29 June,2023, Gandhidham, located near Kandla Port becomes 1st City to have a municipal corporation.</p></div></div>
+    `
+        } ,   
+        {
+            img :'./../IMAGEfiles/Andaman/anda1.jpg',
+            title:'Andaman and Nicobar',
+            template:` <div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Andaman and Nicobar Island</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/Andaman/anda2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/Andaman/anda3.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/Andaman/anda4.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>The Andaman and Nicobar Islands is a union territory of India. It consists of 836 islands grouped into two island groups, the northern Andaman Islands and the southern Nicobar Islands, separated by a 150 km (93 mi) wide channel of which only 31 are inhabited. Port Blair is the capital and largest city of the territory, located about 1,190 km (740 mi) from Chennai and 1,255 km (780 mi) from Kolkata in mainland India. The islands are sandwiched between the Bay of Bengal to the west and the Andaman Sea to the east with the northern-most point located 901 km (560 mi) from the mouth of Hooghly river. Indira Point at 6°45’10″N and 93°49’36″E at the southern tip of Great Nicobar, is the southernmost point of India.
+
+            The territory shares maritime borders with Indonesia located about 165 km (103 mi) to the south, Myanmar located 280 km (170 mi) to the north-east and Thailand located 650 km (400 mi) to the south-east. The islands occupy a total land area of approximately 8,249 km2 (3,185 sq mi) with a population of 3.8 lakhs as per the 2011 census. The territory is divided into three districts: Nicobar, South Andaman and North and Middle Andaman with the Nicobar, Port Blair and Mayabunder respectively.
+            
+            Genetic and cultural studies suggest that the indigenous Andamanese people may have been isolated from other the Middle Paleolithic era, more than 30,000 years ago. Archeological evidence of civilisation has been dated back to 2,200 years. In the 11th century CE, Cholas, one of the three Tamil kingdoms, used the islands as a naval base to launch an expeditions in South East Asia. Danish were the first Europeans to arrive in 1755, which became part of the British Raj in 1868. During the Second World War, the islands were invaded by the Japanese Empire.</p></div></div>
+    `
+        }    ,
+        {
+            img :'./../IMAGEfiles/Amber/amb1.jpg',
+            title:'Amber Fort',
+            template:`<div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Amber Fort</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/Amber/amb2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/Amber/amb3.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/Amber/amb4.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>Amer Fort or Amber Fort is a fort located in Amer, Rajasthan, India. Amer is a town with an area of 4 square kilometres (1.5 sq mi)[2] located 11 kilometres (6.8 mi) from Jaipur, the capital of Rajasthan. Located high on a hill, it is the principal tourist attraction in Jaipur.[3][4] Amer Fort is known for its artistic style elements. With its large ramparts and series of gates and cobbled paths, the fort overlooks Maota Lake,[4][5][6][7] which is the main source of water for the Amer Palace.
+
+            Amer Palace is great example of Rajput architecture. Some of its buildings and work have influence of Mughal architecture.[8][9][10] Constructed of red sandstone and marble, the attractive, opulent palace is laid out on four levels, each with a courtyard. It consists of the Diwan-e-Aam, or "Hall of Public Audience", the Diwan-e-Khas, or "Hall of Private Audience", the Sheesh Mahal (mirror palace), or Jai Mandir, and the Sukh Niwas where a cool climate is artificially created by winds that blow over a water cascade within the palace. Hence, the Amer Fort is also popularly known as the Amer Palace.[5] The palace was the residence of the Rajput Maharajas and their families. At the entrance to the palace near the fort's Ganesh Gate, there is a temple dedicated to Shila Devi, a Goddess of the Chaitanya cult, which was given to Raja Man Singh when he defeated the Raja of Jessore, Bengal in 1604. (Jessore is now in Bangladesh).[4][11][12] Raja Man Singh had 12 queens so he made 12 rooms, one for each Queen. Each room had a staircase connected to the King’s room but the Queens were not to go upstairs. Raja Jai Singh had only one queen so he built one room equal to three old queen’s rooms.</p></div></div>
+    
+    `
+        }    ,
+        {
+            img :'./../IMAGEfiles/agra/agra1.jpg',
+            title:'Agra Fort',
+            template:` <div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Agra Fort</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/agra/agra2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/agra/agra3.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/agra/agra4.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>Agra Fort is a historical fort in the city of Agra in India. It was the main residence of the emperors of the Mughal Dynasty till 1638, when the capital was shifted from Agra to Delhi. The Agra fort is a UNESCO World Heritage site.It is about 2.5 km northwest of its more famous sister monument, the Taj Mahal. The fort can be more accurately described as a walled city.
+
+            After the First Battle of Panipat in 1526, the victorious Babur stayed in the fort, in the palace of Ibrahim Lodi. He later built a baoli in it. His successor, Humayun, was crowned in the fort in 1530. He was defeated at Bilgram in 1540 by Sher Shah Suri. The fort remained with the Suris till 1555, when Humayun recaptured it. Adil Shah Suri’s general, Hemu, recaptured Agra in 1556 and pursued its fleeing governor to Delhi where he met the Mughals in the Battle of Tughlaqabad. Sheesh Mahal, Agra Fort:The effect produced by lighting candles in Sheesh Mahal, Agra Fort.
+            
+            Realising the importance of its central situation, Akbar made it his capital and arrived in Agra in 1558. His historian, Abul Fazl, recorded that this was a brick fort known as ‘Badalgarh’. It was in a ruined condition and Akbar had it rebuilt with red sandstone from Barauli area Dhaulpur district, in Rajasthan. Architects laid the foundation and it was built with bricks in the inner core with sandstone on external surfaces. Some 4,000 builders worked on it daily for eight years, completing it in 1573.</p></div></div>
+    `
+        }    ,
+        {
+            img :'./../IMAGEfiles/leh/leh1.jpg',
+            title:'Leh Ladakh',
+            template:` <div class="special" style="position:relative;" ><button id="cross" style="position:absolute;right:20px;">&cross;</button> <h1 style="font-size: 75px; margin-bottom: 8px; background-color: gray;color: aliceblue; font-family: Arial, Helvetica, sans-serif; text-align: center; width: 99vw;">Leh Ladakh</h1>
+        <div class="imagecontainer"><img src="./../IMAGEfiles/leh/leh2.jpg" alt="img1" class="img1">
+        <img src="./../IMAGEfiles/leh/leh4.jpg" alt="img2" class="img1">
+        <img src="./../IMAGEfiles/leh/leh3.jpg" alt="imm3" class="img1" > </div> <div class="paraDetails" ><p>Ladakh is a region administered by India as a union territory[1] and constitutes an eastern portion of the larger Kashmir region that has been the subject of a dispute between India and Pakistan since 1947 and India and China since 1959.[2] Ladakh is bordered by the Tibet Autonomous Region to the east, the Indian state of Himachal Pradesh to the south, both the Indian-administered union territory of Jammu and Kashmir and the Pakistan-administered Gilgit-Baltistan to the west, and the southwest corner of Xinjiang across the Karakoram Pass in the far north. It extends from the Siachen Glacier in the Karakoram range to the north to the main Great Himalayas to the south.[11][12] The eastern end, consisting of the uninhabited Aksai Chin plains, is claimed by the Indian Government as part of Ladakh, and has been under Chinese control.[13]
+
+            Since 1974, the Government of India has successfully encouraged tourism in Ladakh. As Ladakh is strategically important, the Indian military maintains a strong presence in the region.
+            
+            The largest town in Ladakh is Leh, followed by Kargil, each of which headquarters a district.[15] The Leh district contains the Indus, Shyok and Nubra river valleys. The Kargil district contains the Suru, Dras and Zanskar river valleys. The main populated regions are the river valleys, but the mountain slopes also support pastoral Changpa nomads. The main religious groups in the region are Muslims (mainly Shia) (46%), Buddhists (mainly Tibetan Buddhists) (40%), and Hindus (12%) with the remaining 2% made of other religions.[16][17] Ladakh is one of the most sparsely populated regions in India. Its culture and history are closely related to those of Tibet.</p></div></div>
+    
+    `
+        }    
+        
+      ]
+
+ 
+
+        let temp=  arr.map((el,i)=>{
+          return  ` 
+         <div class="card">
+            <div class="cardImage">
+                <img src=${el.img} alt="" id="img">
+                <!-- <img src='./../IMAGE files/${el}' alt=""> -->
+            </div>
+            <div class="cardTitle">
+                ${el.title}
+            </div>
+            <div class="cardBtn">
+                <a href='#' data-track=${i} class="d">Details</a>
+            </div>
+         </div>`
+
+        })
+
+
+       console.log(track);
+
+        box.innerHTML = [ ...temp.map((el,i)=>{
+            if (i<3 ) {
+                return el;
+            }
+          
+             
+            
+        })].join(' ')
+        // console.log(temp);
+         
+        const btns=document.getElementsByClassName("d")
+        console.log(btns);
+        Array.from(btns).forEach(el=>{
+            el.addEventListener("click",(e)=>{
+
+                
+                let s=document.getElementsByClassName("special")[0]
+               
+                h.style.marginTop="380px"
+                // s.style.marginTop="0px"
+
+                 
+                // t.style.display="hidden"
+                cardbox.style.display="none"
+                let data= e.target.dataset.track * 1
+                details[0].style.display="block"
+                details[0].innerHTML = arr[data].template
+                const cross = document.getElementById("cross")
+                cross.addEventListener("click",(e)=>{
+                    cardbox.style.display="flex"
+                details[0].style.display="none"
+                h.style.marginTop="0px"
+
+                })
+
+
+            })
+        })
+
+        
+        left.addEventListener("click",()=>{
+            if (track == 0) {
+                track = 6
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if (track < 9 && i >=6 ) {
+                track++;
+                return el;
+
+            }
+        })].join(' ')
+            }else if(track == 9){
+                track = 3
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if (track < 6 && i >=3 && i<6 ) {
+                track++;
+                return el;
+
+            }
+            //hear
+        })].join(' ')
+            }
+
+            else if(track == 6){
+                track = 0
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if (i <3  ) {
+                track++;
+                return el;
+
+            }
+        })].join(' ')
+            } else if(track ==3){
+                track = 6
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if ( i<9 && i>=6 ) {
+                track++;
+                return el;
+
+            }
+        })].join(' ')
+            }
+
+            const btns=document.getElementsByClassName("d")
+        console.log(btns);
+        Array.from(btns).forEach(el=>{
+            el.addEventListener("click",(e)=>{
+                cardbox.style.display="none"
+                let data= e.target.dataset.track * 1
+                details[0].style.display="block"
+                details[0].innerHTML = arr[data].template
+                const cross = document.getElementById("cross")
+                cross.addEventListener("click",(e)=>{
+                    cardbox.style.display="flex"
+                details[0].style.display="none"
+
+                })
+
+
+            })
+        })
+
+
+           
+            
+        })
+        right.addEventListener("click",()=>{
+            if (track == 0) {
+                track = 3
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if (track >= 3 && track <=5 && i >=3 && i<=5 ) {
+                track++;
+                return el;
+
+            }
+        })].join(' ')
+            } else if(track == 6){
+                track = 6
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if (track >= 6 && track <=8 && i >=6 && i<=8 ) {
+                track++;
+                return el;
+
+            }
+        })].join(' ')
+
+
+
+            }else if(track == 9){
+                track = 0
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if ( i < 3) {
+                track++;
+                return el;
+
+            }
+        })].join(' ')
+
+
+
+            }else if (track == 3) {
+                track = 3
+                box.innerHTML = [ ...temp.map((el,i)=>{
+            if (track >= 3 && track <=5 && i >=3 && i<=5 ) {
+                track++;
+                return el;
+
+            }
+        })].join(' ')
+            } 
+
+            const btns=document.getElementsByClassName("d")
+        console.log(btns);
+        Array.from(btns).forEach(el=>{
+            el.addEventListener("click",(e)=>{
+                cardbox.style.display="none"
+                let data= e.target.dataset.track * 1
+                details[0].style.display="block"
+                details[0].innerHTML = arr[data].template
+                const cross = document.getElementById("cross")
+                cross.addEventListener("click",(e)=>{
+                    cardbox.style.display="flex"
+                details[0].style.display="none"
+
+                })
+
+
+            })
+        })
+
+        })
+        
+
+
+
+    </script>
+
+<script src="./../JAVASCRIPT files/home.js"></script>
+</body>
+</html>

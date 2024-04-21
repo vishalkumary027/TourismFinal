@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../CSS files/porfile.css">
+</head>
+<body>
+    <div class="wrapper">
+        <a href="/index.html"> <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span></a>
+    <div class="container">
+        <div id="profileImg">
+            <!-- <img src="./../IMAGE files//profile.webp" alt=""> -->
+        </div>
+        <div id="data">
+
+        </div>
+        
+    </div>
+</div>
+
+    <script>
+        let img= document.getElementById("profileImg")
+        console.log(img);
+        let contentBox= document.getElementById("data")
+        let cimg=document.createElement('img')
+        cimg.setAttribute('src','./../IMAGEfiles//profile.webp')  
+        img.appendChild(cimg)
+
+        let data=JSON.parse(localStorage.getItem('loginData'))
+         contentBox.innerHTML = `
+         <div class = "nameBox"> ${data.name}</div>
+         <div class = "emailBox"> ${data.email}</div>
+         `
+
+
+    </script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
